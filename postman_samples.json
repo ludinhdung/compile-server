@@ -1,0 +1,228 @@
+{
+    "info": {
+        "name": "Code Compiler API Samples",
+        "description": "Sample requests for testing the Code Compiler API with security features"
+    },
+    "item": [
+        {
+            "name": "1. Basic Compilation (Python)",
+            "request": {
+                "method": "POST",
+                "url": "http://localhost:3000/api/compile",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"language\": \"python\",\n  \"code\": \"print('Hello, World!')\"\n}"
+                }
+            }
+        },
+        {
+            "name": "2. Java Compilation",
+            "request": {
+                "method": "POST",
+                "url": "http://localhost:3000/api/compile",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"language\": \"java\",\n  \"code\": \"public class Main {\\n  public static void main(String[] args) {\\n    System.out.println(\\\"Hello, World!\\\");\\n  }\\n}\"\n}"
+                }
+            }
+        },
+        {
+            "name": "3. JavaScript Compilation",
+            "request": {
+                "method": "POST",
+                "url": "http://localhost:3000/api/compile",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"language\": \"javascript\",\n  \"code\": \"console.log('Hello, World!');\"\n}"
+                }
+            }
+        },
+        {
+            "name": "4. Infinite Loop Detection (Python)",
+            "request": {
+                "method": "POST",
+                "url": "http://localhost:3000/api/compile",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"language\": \"python\",\n  \"code\": \"while True:\\n  print('Infinite loop')\\n\"\n}"
+                }
+            }
+        },
+        {
+            "name": "5. Infinite Loop Detection (JavaScript)",
+            "request": {
+                "method": "POST",
+                "url": "http://localhost:3000/api/compile",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"language\": \"javascript\",\n  \"code\": \"while(true) {\\n  console.log('Infinite loop');\\n}\"\n}"
+                }
+            }
+        },
+        {
+            "name": "6. Restricted Module Access (Python)",
+            "request": {
+                "method": "POST",
+                "url": "http://localhost:3000/api/compile",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"language\": \"python\",\n  \"code\": \"import os\\nos.system('ls')\\nprint('Hello, World!')\"\n}"
+                }
+            }
+        },
+        {
+            "name": "7. File Access Restriction (JavaScript)",
+            "request": {
+                "method": "POST",
+                "url": "http://localhost:3000/api/compile",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"language\": \"javascript\",\n  \"code\": \"const fs = require('fs');\\nfs.readFileSync('/etc/passwd', 'utf8');\\nconsole.log('Hello, World!');\"\n}"
+                }
+            }
+        },
+        {
+            "name": "8. Output Size Limit Test",
+            "request": {
+                "method": "POST",
+                "url": "http://localhost:3000/api/compile",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"language\": \"python\",\n  \"code\": \"for i in range(10000):\\n  print('Line ' + str(i) + ' ' * 100)\"\n}"
+                }
+            }
+        },
+        {
+            "name": "9. Compilation Error (Java)",
+            "request": {
+                "method": "POST",
+                "url": "http://localhost:3000/api/compile",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"language\": \"java\",\n  \"code\": \"public class Main {\\n  public static void main(String[] args) {\\n    System.out.println(\\\"Hello, World!\\\"\\n  }\\n}\"\n}"
+                }
+            }
+        },
+        {
+            "name": "10. Runtime Error (Python)",
+            "request": {
+                "method": "POST",
+                "url": "http://localhost:3000/api/compile",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"language\": \"python\",\n  \"code\": \"print(10/0)\"\n}"
+                }
+            }
+        },
+        {
+            "name": "11. Timeout Test",
+            "request": {
+                "method": "POST",
+                "url": "http://localhost:3000/api/compile",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"language\": \"python\",\n  \"code\": \"import time\\ntime.sleep(10)\\nprint('Done')\"\n}"
+                }
+            }
+        },
+        {
+            "name": "12. Memory Limit Test",
+            "request": {
+                "method": "POST",
+                "url": "http://localhost:3000/api/compile",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"language\": \"python\",\n  \"code\": \"large_list = [0] * 100000000  # Try to allocate a lot of memory\\nprint('Memory allocated')\"\n}"
+                }
+            }
+        },
+        {
+            "name": "13. Health Check",
+            "request": {
+                "method": "GET",
+                "url": "http://localhost:3000/api/health",
+                "header": []
+            }
+        },
+        {
+            "name": "14. List Supported Languages",
+            "request": {
+                "method": "GET",
+                "url": "http://localhost:3000/api/languages",
+                "header": []
+            }
+        }
+    ]
+}
