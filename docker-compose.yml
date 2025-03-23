@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  code-compiler:
+    build:
+      context: .
+      dockerfile: DockerFile
+    container_name: code-compiler
+    ports:
+      - "3000:3000"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /tmp:/tmp
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production
